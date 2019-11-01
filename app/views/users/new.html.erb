@@ -31,6 +31,7 @@
 
 
 <%= form_for @user do |f| %>
+<%= render 'shared/error_messages' %>
   <%= f.label :username %>
   <%= f.text_field :username, placeholder: "Your name here" %>
   <br>

@@ -1,0 +1,8 @@
+<% if @user.errors.any? %>
+	<p>The form has <%= @user.errors.count %> errors</p>
+	<% @user.errors.full_messages.each do |msg| %>	
+		<ul>
+			<li><%= msg %></li>
+		</ul>
+	<% end %>
+<% end %>
