@@ -1,0 +1,45 @@
+<!-- <form class="" action="/users" method="post" accept-charset="UTF-8">
+  <label for="username">User Name: </label>
+  <input type="text" name="user[username]" id="username">
+  <br>
+  <br>
+  <label for="email">Email: </label>
+  <input type="email" name="user[email]" id="email">
+  <br>
+  <br>
+  <label for="password">Password: </label>
+  <input type="password" name="user[password]" id="password">
+  <br>
+  <br>
+  <button type="submit" name="button">Submit</button>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form> -->
+
+<!-- 
+<%= form_tag("/users") do %>
+  <%= label_tag(:username, "Username") %>
+  <%= text_field_tag (:username) %>
+  <br>
+  <%= label_tag(:email, "Email") %>
+  <%= text_field_tag(:email) %>
+  <br>
+  <%= label_tag(:password, "Password") %>
+  <%= password_field_tag (:password) %>
+  <br>
+  <%= submit_tag("Submit") %>
+<% end %> -->
+
+
+<%= form_for @user do |f| %>
+<%= render 'shared/error_messages' %>
+  <%= f.label :username %>
+  <%= f.text_field :username, placeholder: "Your name here" %>
+  <br>
+  <%= f.label :email %>
+  <%= f.email_field :email, placeholder: "Your email here" %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit "Submit" %>
+<% end %>
